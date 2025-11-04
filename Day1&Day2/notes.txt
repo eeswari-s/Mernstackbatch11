@@ -1,0 +1,123 @@
+day1 and day2:
+
+Basic Structure of an HTML Page:
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Page</title>
+  </head>
+  <body>
+    <h1>Welcome to HTML</h1>
+    <p>This is a paragraph.</p>
+  </body>
+</html>
+
+
+<!DOCTYPE html>	-Tells the browser that the document is HTML5
+<html>          -	Root of the HTML document        
+<head>-	Contains metadata, title, and links	
+<title>-	Sets the title in the browser tab	
+<body>-	Contains all visible content	.
+-------------------------------------------------------------------------------------------------------------------
+1.Text Formatting Tags
+     1.1.<h1> to <h6> -Headings (H1 is largest)
+     1.2.<p>-Paragraph
+     1.3<b> / <strong>	Bold text	
+    1.4.<i> / <em>	Italic text	
+    1.5.<u>	Underline text	<u>Underline
+    1.6<mark>	Highlights text	
+    1.7<small>	Makes text smaller	
+    1.8.<sub>	Subscript	
+    1.9<sup>	Superscript	X
+    1.10<br>	Line break	
+    1.11<hr>	Horizontal line	
+-------------------------------------------------------------------------------------------------------------------------
+2.Links & Images
+       2.1<a>	-Creates a hyperlink	
+       example:
+       <a href="https://google.com">Google</a>
+
+       2.2<img>	Adds an image
+       example:	
+       <img src="photo.jpg" alt="My Photo" width="200">
+-----------------------------------------------------------------------------------------------------------------------
+3.Table Tags:
+             example:
+                <table border="1">
+  <caption>Student Details</caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Eswari</td>
+    <td>22</td>
+  </tr>
+</table>
+---------------------------------------------------------------------------------------------------------------------
+4.Form Tags
+<form>
+    <label>Nmae:</label>
+    <input type="name" placeholder="name" required><br><br>
+
+    <label>password:</label>
+    <input type="password" placeholder="password" required><br><br>
+
+    <label>email:</label>
+    <input type="email" placeholder="email" required><br><br>
+
+    <label>Age:</label>
+    <input type="number" placeholder="age" required><br><br>
+
+    <button>Submit</button><br><br>
+    <input type="date"><br><br>
+    <input type="color"><br><br>
+    <input type="file"><br><br>
+    <input type="checkbox"><br><br>
+    <input type="radio"><br><br>
+    <input type="range"><br><br>
+    <input type="file"><br><br>
+</form>
+------------------------------------------------------------------------------------------------------------------------
+5.Semantic Tags
+<header>	Header section
+<footer>	Footer section
+<nav>	Navigation bar
+<article>	Independent article content
+<section>	Defines a section
+<aside>	Sidebar content
+<main>	Main content area
+<figure> & <figcaption>	Image with caption
+-------------------------------------------------------------------------------------------------------------------------
+6.Media Tags:
+<audio>	Play audio	
+<video>	Play video	
+<iframe>	Embed external page/video
+-------------------------------------------------------------------------------------------------------------------------------
+7.internal script:
+<script>
+console.log("hello");
+</script>
+----------------------------------------------------------------------------------------------------------------------------
+8.external script
+<script src="app.js"></script>
+-----------------------------------------------------------------------------------------------------------------------------
+9.inline css:
+  <p style="background-color: blue;">js</p>
+-----------------------------------------------------------------------------------------------------------------------------
+10.internal css:
+        .container {
+        background-color: royalblue;
+        color: turquoise;
+        font-family: cursive;
+        font-size: 100px;
+        width: 200px;
+
+    }
+---------------------------------------------------------------------------------------------------------------------------------
+11.selectors:
+      class selector-(.container)
+      id selector-#
+------------------------------------------------------------------------------------------------------------------------------      
+      
+     
