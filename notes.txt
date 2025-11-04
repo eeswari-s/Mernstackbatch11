@@ -1,0 +1,23 @@
+day1:
+
+1.history
+2.Html structure
+3.tags:
+    table
+    bold
+    headings
+    list
+    paragraph
+    break
+    span
+
+-----------------------------------------------------------------------------------
+Day2:
+   semantic tag
+
+
+
+   Task:
+        
+      
+     
