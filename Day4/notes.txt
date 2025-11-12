@@ -1,0 +1,287 @@
+1.CSS Transition :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .btn
+        {
+            background-color: rgb(70, 6, 199);
+            color:aliceblue;
+            padding: 15px 30px;
+            font-size: 20px;
+            border:none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 3.5s ease,transform 0.4s ease;
+
+            
+        }
+        .btn:hover{
+            background-color: rgb(222, 222, 11);
+            transform: scale(5.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">click</button>
+</body>
+</html>
+----------------------------------------------------------------------------------------
+2.Transforms:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: lightblue;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box
+        {
+            width: 100px;
+            height: 100px;
+            background: teal;
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            border-radius: 15px;
+            transition : transform 0.8s ease-in-out;
+        }
+
+       .box1:hover{
+        transform:translate(50px,20px);
+       }
+       .box2:hover{
+        transform:rotate(80deg);
+       }
+       .box3:hover{
+        transform:scale(1.5);
+       }
+       .box4:hover{
+        transform:skew(20deg);
+       }
+        
+    </style>
+</head>
+<body>
+  <div class="box box1">Move</div>
+  <div class="box box2">Rotate</div>
+  <div class="box box3">Zoom</div>
+  <div class="box box4">Skew</div>
+</body>
+</html>
+---------------------------------------------------------------------------------------
+3.animation 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: lightblue;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .ball 
+        {
+            width: 80px;
+            height: 80px;
+            background: crimson;
+            border-radius: 50%;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        @keyframes bounce 
+        {
+            0%,100%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(-100px);
+            
+        }
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>
+-------------------------------------------------------------------------------
+4.css filters 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #2222;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            transition: filter 1.5s;
+            border-radius: 10px;
+           
+        }
+        img:hover:nth-child(4)
+        {
+            filter:blur(3px);
+
+        }
+        img:hover:nth-child(2)
+        {
+            filter:grayscale(100%)
+        }
+        img:hover:nth-child(3)
+        {
+            filter: brightness(150%);
+        }
+        img:hover:nth-child(1)
+        {
+            filter: sepia(100%);
+        }
+    </style>
+</head>
+<body>
+    <img src="./assets/img1.jpg" alt="image1">
+    <img src="./assets/img2.jpg" alt="image2">
+    <img src="./assets/img3.webp" alt="image3">
+    <img src="./assets/img4.jpg" alt="image4">
+</body>
+</html>
+-------------------------------------------------------------
+5.shadow
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightblue;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card
+        {
+            width: 150px;
+            height: 100px;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+
+        }
+        .card:hover{
+            box-shadow: 10px 10px 25px rgba(0,0,0,0.6);
+        }
+        .text
+        {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+            text-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="text">Text</span>
+    </div>
+</body>
+</html>
+\----------------------------------------------------------------------------
+6.CSS clip path
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightblue;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+      .clip
+      {
+        width: 250px;
+        height: 250px;
+       background: url(./assets/img1.jpg) no-repeat center/cover;
+       clip-path: circle(50%)
+      }
+    </style>
+</head>
+<body>
+    <div class="clip"></div>
+</body>
+</html>
+----------------------------------------------------------
+7.CSS blend mode
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blend{
+            width: 300px;
+            height: 300px;
+            background-image: url(https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png);
+            background-color: blue;
+            background-blend-mode:multiply;
+            background-size: cover;
+            border-radius: 15px;
+            margin:50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="blend"></div>
+</body>
+</html>
+------------------------------------------------
+3d,smooth
