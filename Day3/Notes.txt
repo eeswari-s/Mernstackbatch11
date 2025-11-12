@@ -1,0 +1,151 @@
+1.css
+
+1.selector:
+      1.tag selector ---h1{//code}
+      2.class selector--- .second{//code}
+      3.id selector   --- #third{//code}
+      4.universal selector--- *{//code}
+      5.grouping selector
+     
+-------------------------------------------------------
+2.colors in css
+     color name
+     Hexcode-#ff5733
+     RGB-rgb(200,400,0)
+
+----------------------------------------------------------
+3.backgrounds
+ ---------------------------------------------------------
+ 4.boder   
+ ----------------------------------------------------------
+ day 4:
+ 1.box model :
+ html:
+  <div class="box">Basic Box Model</div>
+
+  <div class="content-box">Box-sizing: content-box</div>
+  <div class="border-box">Box-sizing: border-box</div>
+
+  <div class="overflow-example">
+    This is a very long text that goes beyond the box height, so you’ll see a scrollbar!
+  </div>
+  css:
+  .box
+{
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    padding:20px;
+    border: 5px solid darkblue;
+    margin: 30px;
+}
+.content-box
+{
+    box-sizing: content-box;
+    width: 200px;
+    height: 100px;
+    background-color: lightcoral;
+     padding:20px;
+    border: 5px solid darkblue;
+    margin: 30px;
+}
+
+.border-box
+{
+    box-sizing: content-box;
+    width: 200px;
+    height: 100px;
+    background-color: lightgreen;
+     padding:20px;
+    border: 5px solid darkblue;
+    margin: 30px;
+}
+
+.overflow-example
+{
+   width: 150px;
+   height: 50px;
+   border:2px solid red;
+   overflow: auto;
+}
+------------------------------------------------------------------------------------------
+display:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block
+{
+    display:block;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.inline
+{
+    width: 200px;
+    height: 100px;
+    display: block;
+    background-color: lightblue;
+    padding: 5px;
+}
+.inline-block
+{
+    display: inline-block;
+    background-color: red;
+    width: 100px;
+    height:50px;
+    text-align: center;
+}
+.hidden
+{
+    display:none;
+}
+
+.invisible
+{
+    visibility: hidden;
+}
+
+.stack
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.box1
+{
+    background-color: blue;
+   top:50px;
+   left:50px;
+}
+.box2
+{
+    background-color: green;
+    top:70px;
+    left:70px;
+    z-index: -1;
+    
+}
+    </style>
+</head>
+<body>
+    <p class="block">this is p</p>
+
+<span class="inline">inline1</span>
+<span class="inline">inline1</span>
+
+<div class="inline-block">box1</div>
+<div class="inline-block">box1</div>
+
+<p class="hidden">this text is hidden</p>
+<p class="invisible">this text is invisible</p>
+
+<div class="stack box1"></div>
+<div class="stack box2"></div>
+</body>
+</html>
