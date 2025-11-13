@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            background: #08bfdf;
+        }
+        .box{
+            padding: 50px;
+            background: orchid;
+            color: white;
+            font-size: 30px;
+        }
+        .box a{
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+        }
+        /* media query mobile  (<=600px*/
+        @media(max-width:600px)
+        {
+            .box{
+                background: darkgreen;
+                font-size: 20px;
+                width: 300px;
+            }
+        }
+            /* tablet */
+            @media(min-width:601px) and (max-width:900px)
+            {
+                .box{
+                    background: darkblue;
+                    font-size: 25px;
+                    width: 600px;
+                }
+            }
+            /* desktop */
+            @media(min-width:901px) and (max-width:1200px)
+            {
+                .box{
+                    background: darkred;
+                    font-size: 30px;
+                    width: 900px;
+                }
+            }
+            /* large desktop */
+            @media(min-width:1201px)
+            {
+                .box{
+                    background: rgb(212, 192, 9);
+                    font-size: 35px;
+                    width: 1200px;
+                }
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+
+    </div>
+</body>
+</html>

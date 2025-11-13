@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            margin: 0px;
+            background: #e4a5a5;
+        }
+        h1{
+            margin-top: 60px;
+            background-color: aqua;
+           color: darkblue;
+          padding: 10px;
+           display:inline-block;
+        }
+        /* //Basic Flex Container */
+        .basic-flex
+        {
+            display: flex;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+            
+        }
+        .box{
+            background: coral;
+            padding: 20px;
+            border: 2px solid #000;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Flex direction< */
+
+
+        .row{
+            display: flex;
+            flex-direction: row;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+        }
+        .column{
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+        }
+        /* Justify Content */
+        .justify-demo{
+            display: flex;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+        }
+        .center{
+            justify-content: center;
+        }
+        .space-between{
+            justify-content: space-between;
+        }
+        .space-around{
+            justify-content: space-around;
+        }
+        .flex-end{
+            justify-content: flex-end;
+        }
+        /* align items */
+        .align-demo{
+            display: flex;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+            height: 150px;
+        }
+        .center{
+            align-items: center;
+        }
+        .flex-start{
+            align-items: flex-start;
+        }
+        .flex-end{
+            align-items: flex-end;
+        }
+        .small{
+            height: 50px;
+        }
+        .medium{
+            height: 100px;
+        }
+        .large{
+            height: 150px;
+        }
+        /* Flex Wrap */
+        .flex-wrap{
+            display: flex; 
+             flex-wrap: wrap;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+        }
+        .wrap-demo{
+            display: flex; 
+             flex-wrap: wrap;
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+            max-width: 600px;
+        }
+        /*no wrap*/
+        .no-wrap{
+            flex-wrap: nowrap;
+        }
+        /* gap */
+        .gap-demo{  
+            display: flex; 
+            background: #fff;
+            padding: 20px;
+            gap: 30px;
+            border: 2px solid #000;
+        }
+        /* flex grow */
+        .flex-grow-demo{  
+            display: flex; 
+            background: #fff;
+            padding: 20px;
+            gap: 20px;
+            border: 2px solid #000;
+        }
+        .flex-grow-1{
+            flex-grow: 1;
+        }
+
+        .flex-grow-2{
+            flex-grow: 2;
+        }
+        .flex-grow-3{
+            flex-grow: 3;
+        }
+        /* flex shrink */
+        .flex-shrink-demo{  
+            display: flex; 
+            background: #fff;
+            padding: 20px; 
+            gap: 20px; 
+            border: 2px solid #000;
+            width: 400px;
+        }
+        /* flex basis */
+        .flex-basis-demo{  
+            display: flex;  
+            background: #fff;    
+            padding: 20px;  
+            gap: 20px;  
+            border: 2px solid #000;  
+            width: 400px;   
+        }
+        .flex-basis-demo .box{
+            flex-basis: 100px;
+        }
+        /* order */
+        .order-demo{  
+            display: flex;  
+            background: #fff;    
+            padding: 20px;  
+            gap: 20px;  
+            border: 2px solid #000;  
+        }
+        .order-demo .box:nth-child(1){
+            order: 1;
+        }
+        .order-demo .box:nth-child(2){
+            order: 1;   
+        }
+        .order-demo .box:nth-child(3){
+            order: 2;   
+        }
+        /* align self */
+        .align-self-demo{  
+            display: flex;  
+            flex-wrap: wrap;
+            background: #fff;    
+            padding: 20px;  
+            gap: 20px;  
+            border: 2px solid #000;  
+            height: 150px;
+        }
+        .align-self-demo .box:nth-child(1){
+            height: 50px;
+        }
+        
+        .align-self-demo .box:nth-child(3){
+            height: 150px;
+        }
+        /* perfect centering */
+        .centering-box{  
+            display: flex;  
+            justify-content: center; 
+            align-items: center; 
+            height: 200px;  
+            background: #fff;    
+            border: 2px solid #000;  
+        }
+        /* responsiveness */
+        .card-container{  
+            display: flex;  
+            background: #fff;    
+            padding: 20px;  
+            gap: 20px;  
+            border: 2px solid #000;  
+        }
+        .card{
+            width: 150px;
+            height: 100px;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+        .card:hover{
+            box-shadow: 10px 10px 25px rgba(0,0,0,0.6);
+        }
+        .text{
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+       
+    
+    </style>
+</head>
+<body>
+    <h1>Basic Flex Container</h1>
+
+    <div class="basic-flex">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+    </div>
+
+    <h2>Flex direction row</h2>
+    <div class="row">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <h1>flex dierection column</h1>
+    <div class="column">
+        <div class="box">X</div>
+        <div class="box">Y</div>
+        <div class="box">Z</div>
+    </div>
+
+    <h1>Justify Content</h1>
+    <div class="justify-demo center">
+        <div class="box">5</div>
+        <div class="box">6</div>
+      </div>
+
+      <h1>space between</h1>
+        <div class="justify-demo space-between">
+            <div class="box">M</div>
+            <div class="box">N</div>
+            </div>
+
+            <h1>Space around</h1>
+            <div class="justify-demo space-around">
+                <div class="box">P</div>
+                <div class="box">Q</div>
+                </div>
+
+                <h1>Flex End </h1>
+                <div class="justify-demo flex-end">
+                    <div class="box">R</div>
+                    <div class="box">S</div>
+                    </div>  
+
+                    <h1>align items</h1>
+                    <div class="align-demo" style="align-items:center">
+                        <div class="box small">1</div>
+                        <div class="box medium">2</div>
+                    </div>
+
+                    <h1>Flex Wrap</h1>
+                    <div class="wrap-demo">
+                        <div class="box">Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Repudiandae maiores quaerat ipsa, a ratione quo
+                             totam porro quidem reprehenderit esse delectus provident adipisci
+                              tempore sapiente? Accusamus perspiciatis dolorum consectetur rerum
+                               laudantium maxime iure! Aperiam suscipit vero numquam nostrum hic,
+                                maxime sunt eum
+                             blanditiis itaque corrupti fugit voluptatibus ullam nisi eveniet?
+                        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias voluptas
+                             provident quisquam illo, sequi harum minus illum, repudiandae voluptates, eligendi odio.
+                              Reiciendis ab, rerum odio beatae, perspiciatis vero animi sapiente tempora et eaque tenetur
+                               unde non recusandae nihil iste ullam vitae nam quod sed enim dicta blanditiis. Aspernatur, 
+                               amet magnam.</h1>
+                            </div>
+</div>
+
+                            <h1>flex no wrap</h1>
+                            <div class="flex-wrap" style="flex-wrap: nowrap">
+                        <div class="box">2</div>
+                        <div class="box">3</div>
+                        <div class="box">4</div>
+                        <div class="box">5</div>
+                        <div class="box">6</div>
+                        <div class="box">7</div>
+                        <div class="box">8</div>
+                        </div>
+
+                        <h1>gap</h1>
+                        <div class="gap-demo">
+                            <div class="box">A</div>
+                            <div class="box">B</div>
+                            <div class="box">C</div>
+                            <div class="box">D</div>
+                            </div>
+
+                            <h1>flex grow</h1>
+
+                            <div class="flex-grow-demo">
+                                <div class="box flex-grow-1">1</div>
+                                <div class="box flex-grow-2">2</div>
+                                <div class="box flex-grow-3">3</div>
+                            </div>
+
+                            <h1>Flex shrink</h1>
+                            <div class="flex-shrink-demo">
+                                <div class="box">1</div>
+                                <div class="box">2</div>
+                                <div class="box">3</div>
+                                <div class="box">4</div>
+                                <div class="box">5</div>
+                            </div>
+
+                            <h1>Flex basis</h1>
+                            <div class="flex-basis-demo">
+                                <div class="box">1</div>
+                                <div class="box">2</div>
+                                <div class="box">3</div>
+                            </div>
+
+                            <h1>order</h1>
+                            <div class="order-demo">
+                                <div class="box">1</div>
+                                <div class="box">2</div>
+                                <div class="box">3</div>
+                            </div>
+
+                            <f1>align self</f1>
+
+                            <div class="align-self-demo">
+                                <div class="box small">1</div>
+                                <div class="box medium" style="align-self: center">2</div>
+                                <div class="box large">3</div>
+                            </div>
+
+                            <h1>perfect centering</h1>
+
+                            <div class="centering-box">
+                                <div class="box">Centered</div>
+                            </div>
+
+                            <h1>resposiveness</h1>
+                            <div class="card-containe">
+                                <div class="card box">Card 1</div>
+                                <div class="card box">Card 2</div>
+                                <div class="card box">Card 3</div>
+                            </div>
+</body>
+</html>

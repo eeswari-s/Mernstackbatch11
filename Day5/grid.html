@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grid Masterclass</title>
+<style>
+
+body {
+  font-family: Arial;
+  padding: 30px;
+  background: #f3f3f3;
+}
+
+h2 {
+  margin-top: 60px;
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* -----------------------------
+   1. BASIC GRID
+----------------------------- */
+
+.basic-grid {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #000;
+}
+
+.box {
+  background: coral;
+  padding: 20px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* -----------------------------
+   2. USING repeat()
+----------------------------- */
+
+.repeat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 15px;
+}
+
+/* -----------------------------
+   3. fr UNITS
+----------------------------- */
+
+.fr-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+}
+
+/* -----------------------------
+   4. minmax()
+----------------------------- */
+
+.minmax-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+/* -----------------------------
+   5. auto-fit / auto-fill
+----------------------------- */
+
+.autofit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+  background:#fff;
+  padding:20px;
+}
+
+/* -----------------------------
+   6. GRID ROWS & COLUMNS SPAN
+----------------------------- */
+
+.span-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+  gap: 20px;
+}
+
+.span-grid div:nth-child(1) {
+  grid-column: span 2;
+}
+
+.span-grid div:nth-child(2) {
+  grid-row: span 2;
+}
+
+/* -----------------------------
+   7. GRID TEMPLATE AREAS
+----------------------------- */
+
+.area-grid {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu content sidebar"
+    "menu footer footer";
+  grid-template-columns: 150px 1fr 200px;
+  grid-template-rows: 100px auto 100px;
+  gap: 10px;
+}
+
+.header { grid-area: header; background: dodgerblue; padding: 20px; color: #fff; }
+.menu { grid-area: menu; background: #444; padding: 20px; color: #fff; }
+.content { grid-area: content; background: #666; padding: 20px; color: #fff; }
+.sidebar { grid-area: sidebar; background: #888; padding: 20px; color: #fff; }
+.footer { grid-area: footer; background: teal; padding: 20px; color: #fff; }
+
+/* -----------------------------
+   8. JUSTIFY & ALIGN CONTENT
+----------------------------- */
+
+.align-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 20px;
+  height: 350px;
+  border: 2px solid black;
+  justify-content: center; 
+  align-content: center;
+}
+
+.item {
+  background: salmon;
+  padding: 20px;
+  border-radius: 10px;
+  color:#fff;
+  text-align:center;
+}
+
+/* -----------------------------
+   9. JUSTIFY & ALIGN ITEMS
+----------------------------- */
+
+.align-items-grid {
+  display: grid;
+  grid-template-columns: repeat(3,150px);
+  grid-template-rows: repeat(2,150px);
+  gap: 20px;
+  border:2px solid #333;
+  justify-items: center;
+  align-items: center;
+}
+
+.justify-items-grid .box {
+  justify-self: start;
+}
+
+/* -----------------------------
+   10. RESPONSIVE GRID CARDS
+----------------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+<body>
+
+<h2>1. Basic Grid</h2>
+<div class="basic-grid">
+  <div class="box">A</div>
+  <div class="box">B</div>
+  <div class="box">C</div>
+</div>
+
+<h2>2. repeat()</h2>
+<div class="repeat-grid">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <div class="box">4</div>
+</div>
+
+<h2>3. fr Units (Flexible Layout)</h2>
+<div class="fr-grid">
+  <div class="box">1fr</div>
+  <div class="box">2fr</div>
+  <div class="box">1fr</div>
+</div>
+
+<h2>4. minmax()</h2>
+<div class="minmax-grid">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+<h2>5. auto-fit (Responsive Magic)</h2>
+<div class="autofit-grid">
+  <div class="box">A</div><div class="box">B</div><div class="box">C</div><div class="box">D</div>
+</div>
+
+<h2>6. Grid Column & Row Span</h2>
+<div class="span-grid">
+  <div class="box">Span 2 Cols</div>
+  <div class="box">Span 2 Rows</div>
+  <div class="box">C</div>
+  <div class="box">D</div>
+</div>
+
+<h2>7. Grid Template Areas (Real Layout)</h2>
+<div class="area-grid">
+  <div class="header">Header</div>
+  <div class="menu">Menu</div>
+  <div class="content">Content</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="footer">Footer</div>
+</div>
+
+<h2>8. Align Content (Entire Grid Alignment)</h2>
+<div class="align-grid">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+</div>
+
+<h2>9. Align Items + Justify Items</h2>
+<div class="align-items-grid">
+  <div class="box">A</div>
+  <div class="box">B</div>
+  <div class="box">C</div>
+  <div class="box">D</div>
+</div>
+
+<h2>10. Fully Responsive Grid Cards</h2>
+<div class="card-grid">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+  <div class="card">Card 4</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+1.Flex:
+  3.media query 
+
+
+  syntax:
+   @media (condition)
+   {
+    //code
+   }  
+
+
+:hover
+:ebfore
+::after
+::first letter
+::first-letter
+::slection 
