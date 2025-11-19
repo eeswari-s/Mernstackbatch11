@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="./output.css" rel="stylesheet">
+    <title>Document</title>
+   <!-- <style>
+    body{
+        margin:0;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background: #f1f5f9;
+        padding: 20px;
+    }
+    .grid-box
+    {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        background: turquoise;
+        border-radius: 15px;
+        box-shadow: 5px;
+        margin: 20px;
+
+    }
+    @media (min-width:640px)
+    {
+        .grid-box{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width:768px)
+    {
+        .grid-box{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (min-width:1024px)
+    {
+        .grid-box{
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    </style> -->
+</head>
+<body class="p-6 bg-slate-100">
+  <h2 class="text-2xl font-bold mb-4">Responsiveness grid</h2>
+
+  <div class="grid grid-cols-1 bg-blue-800 rounded-sm shadow-md
+              sm:grid-cols-2
+              md:grid-cols-3
+              lg:grid-cols-4
+              gap-4 ">
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">1</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">2</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">3</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">4</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">5</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">6</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">7</div>
+    <div class="bg-green-400 p-10 rounded-xl text-center font-bold shadow">8</div>
+  </div>
+
+  <div class="grid grid-cols-5 grid-rows-5 gap-4 bg-yellow-300 mt-6 p-4 rounded-md shadow-md">
+    <div class="col-span-5 bg-blue-800">
+        <a href="#">Home</a>
+    </div>
+    <div class="col-start-2 row-start-2 bg-blue-800">3</div>
+    <div class="col-start-3 row-start-2 bg-blue-800">4</div>
+    <div class="col-start-4 row-start-2 bg-blue-800">5</div>
+    <div class="row-span-4 col-start-5 row-start-2 bg-blue-800">6</div>
+    <div class="col-start-4 row-start-3 bg-blue-800">8</div>
+    <div class="col-start-3 row-start-3 bg-blue-800">9</div>
+    <div class="col-start-2 row-start-3 bg-blue-800">10</div>
+    <div class="col-span-5 col-start-1 row-start-6 bg-blue-800">12</div>
+    <div class="row-span-4 col-start-1 row-start-2">14</div>
+    <div class="col-start-2 row-start-4 bg-blue-800">15</div>
+    <div class="col-start-3 row-start-4 bg-blue-800">16</div>
+    <div class="col-start-4 row-start-4 bg-blue-800">17</div>
+    <div class="col-start-2 row-start-5 bg-blue-800">18</div>
+    <div class="col-start-3 row-start-5 bg-blue-800">19</div>
+    <div class="col-start-4 row-start-5 bg-blue-800">20</div>
+</div>
+</body>
+</html>

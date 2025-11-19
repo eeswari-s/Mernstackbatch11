@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="./output.css" rel="stylesheet">
+    <title>Document</title>
+   <style>
+   
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!--navbar-->
+    <header class="bg-white shadow-md py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">Amazon</h1>
+        <div>
+        <input type="text" placeholder="search products" class="w-1/2 border px-4 py-2 shadow-sm focus:ring-2-blue-400">
+        <button class="bg-green-600  text-white   px-5 py-2  rounded-lg  hover:bg-blue-700">Search</button>
+        </div>
+        <button class="bg-green-600  text-white   px-5 py-2  rounded-lg  hover:bg-blue-700">cart</button>
+    </header>
+    <!-- main lyout for amazon clone -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6  p-6">
+        <!-- filter -->
+        <aside class="bg-lime-600 p-5 rounded-xl shadow-md h-fit md:sticky md:top-5">
+            <h2 class="text-lg font-semibold mb-4 text-gray-800">Filters</h2>
+            <!--category-->
+            <div class="mb-5">
+                <h2 class="font-medium mb-2">By Category</h2>
+                <ul class="space-y-1 text-sm">
+                <li><input type="checkbox">laptops</li>
+                <li><input type="checkbox">mobiles</li>
+                <li><input type="checkbox">headphones</li>
+                <li><input type="checkbox">smart watches</li>
+                <li><input type="checkbox">speakers</li>
+                </ul>
+            </div>
+
+<!-- price -->
+            <div class="mb-5">
+                <h3 class="font-medium mb-2">price range</h3>
+                <input type="range" min="200" max="2000" class="w-full">
+                <div class="text-sm text-gray-600 mt-1">$500-$5000</div>
+            </div>
+
+            <!-- rating -->
+             <div>
+                <h3>customer rating</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><input type="checkbox">⭐⭐⭐⭐⭐</li>
+                    <li><input type="checkbox">⭐⭐⭐⭐</li>
+                    <li><input type="checkbox">⭐⭐⭐</li>
+                    <li><input type="checkbox">⭐⭐</li>
+                    <li><input type="checkbox">⭐</li>
+                </ul>
+             </div>
+             <button class="bg-green-600  text-white   px-5 py-2  rounded-lg  hover:bg-blue-700">Apply Filters</button>
+        </aside>
+<!--product grid-->
+<main class="md:col-span-3">
+    <h2 class="text-xl font-semibold mb-4 text-gray-800">products</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" >
+        <!--prod card-->
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
+            <img src="https://m.media-amazon.com/images/I/616ICYrahhL._SX679_.jpg" alt="product image" class="rounded-lg mb-3 h-44 w-full object-cover" >
+            <h3 class="font-semibold text-lg">product name</h3>
+            <p class="text-sm text-gray-500 mb-2">$price</p>
+            <p class="text-sm text-gray-500 mb-2">⭐⭐⭐⭐</p>
+            <button>Add to cart</button>
+        </div>
+
+          <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
+            <img src="https://m.media-amazon.com/images/I/3186KxBIR3L._SX342_SY445_QL70_FMwebp_.jpg" alt="product image">
+            <h3>product name</h3>
+            <p>$price</p>
+            <p>⭐⭐⭐⭐</p>
+            <button>Add to cart</button>
+        </div>
+
+          <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
+            <img src="https://m.media-amazon.com/images/I/41w0hATYN-L.jpg" alt="product image">
+            <h3>product name</h3>
+            <p>$price</p>
+            <p>⭐⭐⭐⭐</p>
+            <button>Add to cart</button>
+        </div>
+
+          <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
+            <img src="" alt="product image">
+            <h3>product name</h3>
+            <p>$price</p>
+            <p>⭐⭐⭐⭐</p>
+            <button>Add to cart</button>
+        </div>
+
+          <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
+            <img src="" alt="product image">
+            <h3>product name</h3>
+            <p>$price</p>
+            <p>⭐⭐⭐⭐</p>
+            <button>Add to cart</button>
+        </div>
+
+          <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl transition cursor-pointer">
+            <img src="" alt="product image">
+            <h3>product name</h3>
+            <p>$price</p>
+            <p>⭐⭐⭐⭐</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+</main>
+    </div>
+    <!--footer-->
+    <footer>@all rights reserved</footer>
+ 
+</body>
+</html>

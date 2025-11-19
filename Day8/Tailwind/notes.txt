@@ -1,0 +1,42 @@
+<style>
+        .box
+        {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            background: red;
+        }
+
+        @media(min-width:640px)
+        {
+            .box{
+                background: green;
+            }
+        }
+        @media(min-width:768px)
+        {
+            .box{
+            background: blue;
+        }
+        }
+        @media(min-width:1024px)
+        {
+            .box{
+            background: purple;
+        }
+        }
+        @media(min-width:1280px)
+        {
+            .box{
+            background: orange;
+        }
+        }
+    </style>
+</head>
+<body>
+   <div class="box">esponsiveness</div>
+</body>
