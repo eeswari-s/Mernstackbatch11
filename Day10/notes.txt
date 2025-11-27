@@ -1,0 +1,155 @@
+1.Conditional statement:
+
+     1.1 if statement
+   
+                       Used to run code only when a condition is true.
+        syntax:
+             if(condition)
+             {
+                //code
+             }
+Example:
+           
+    let age = 10;
+
+    if(age > 18)
+    {
+        console.log("You are an adult");
+    }
+----------------------------------------------------------------------------------------------------------
+1.2 if else:
+               if condition false , next line will show output 
+
+        syntax:
+        if(condition)
+        {
+            //code
+        }
+        else{
+            //code
+        }
+
+Example:
+ 
+ let login = "user";
+
+if(login === "user")
+{
+    console.log("redirect to dashboard");
+}
+else{
+    console.log("user not found");
+}
+
+-----------------------------------------------------------------------------
+1.3 else-if
+             To check multiple conditions.
+
+        syntax:
+             if(condition)
+             {
+                //code
+             }
+             elseif(condition)
+             {
+                //code
+             }
+             elseif(condition)
+             {
+                //code
+             }
+             else{
+                //code
+             }
+    Example:
+            let score =115;
+
+if(score >= 90)
+{
+    console.log("grade A");
+}
+else if(score >=80)
+{
+    console.log("grade B");
+}
+else{
+    console.log("grade C");
+}
+---------------------------------------------------------------------------------------
+1.4.Nested if
+                 if statement inside another if statement.
+
+            syntax:
+                   if(condition)
+                   {
+                    if(condition)
+                    {
+                        //code
+                    }
+                   } 
+
+        Example:
+               
+
+let fname="harish";
+ 
+let Id=3486;
+
+
+if(fname ==="harish")
+{
+    if(Id === 3481)
+    {
+        console.log("can enter in to the office");
+    }
+    else
+    {
+        console.log("not fount");
+    }
+}          
+
+-----------------------------------------------------------------------------------
+1.5switch:
+         syntax:
+
+    switch(value)
+    {
+        case 1:
+        //code
+        break;
+        case 2:
+        //code 
+        break;
+        default:
+        //code
+    }
+
+Example:
+          let ITCOMpany= 5
+
+  switch(ITCOMpany)
+{
+    case 1:
+        console.log("Developer");
+        break;
+    case 2:
+        console.log("tester");
+        break;
+        case 3:
+        console.log("Marketing");
+        break;
+        default:
+        console.log("Invalid entry");
+}
+-------------------------------------------------------------------------------------------------
+1.6 ternary operator:
+
+syntax:
+         condition ? truevalue : falsevalue
+
+    
+let login = "harish"; 
+
+ let employee = login === "user" ? "red" : "not found";
+ console.log(employee); 
+-----------------------------------------------------------------------------------------------------
