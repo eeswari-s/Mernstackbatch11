@@ -1,0 +1,227 @@
+1.operators:
+            1.assignment operator
+            2.comparison operator
+            3.logical operatorr
+            4.strring operator
+            5.type operator
+            6.bitwise operator
+            7.ternary operator
+
+  operator ------------- Meaning
+1.  +                      addition
+2.  -                      substraction
+3.  *                      multiplication
+4.  /                      Division
+5.  %                      Modules(reminder)
+6.  **                     Exponent              
+7. ++                      increment
+8.  --                     decrement
+
+Example:
+  let a = 10;
+   let b =  4;
+
+   console.log(a+b);//14
+   console.log(a-b);//6
+   console.log(a*b);//40
+   console.log(a/b);//2.5
+   console.log(a%b);//2
+   console.log(b **3);//64
+   a++;
+   console.log(a);//11
+   b--;
+   console.log(b);//3
+---------------------------------------------------------------------------------------
+1.2 assignment operator
+ 
+ 1.  =   -  assignment
+ 2.  +=  -  Add &assignment
+ 3.  -=  -  substract & assignment
+ 4.  *=  -  multiply &assignment
+ 5.  /=  -  divide &assignment
+ 6.  %=  -  Modules & assignment
+
+ Example:
+           let x = 10;
+
+x += 5;// x= x+5;
+console.log(x);
+ 
+x -=5;
+console.log(x);
+
+Task:
+    *,/,%
+
+------------------------------------------------------------
+1.3 comparison operator:
+
+
+1.  ==     -   Equal(valueonly)
+2. ===     -   strict Equal(value + type)
+3. !=      -   not Equal
+4. >       -   Graterthan
+5. <       -   less than
+6. <=      -   less than or Equal
+7. >=      -   grater than or Equal
+
+Example:
+  console.log(5 == 5);
+console.log(5 ==="5");
+console.log(10 > 5);
+console.log(3 >= 2);
+
+Task:
+<=,!=
+
+----------------------------------------------------------------------------------
+1.4 logical operator
+
+
+1.&&      ---  AND
+2.!       ---  not
+
+Example:
+let age = 10;
+  
+ console.log(age > 18 && age < 30);
+ console.log( age <18 || age >25);
+ console.log(!true);
+ -----------------------------------------------------------------------------------
+ 1.5 string operator
+  1.  +  - plus
+  2.  =  - Equal
+
+  Example:
+            let n =  "harish";
+            let b = "course";
+  console.log("Hi " + n + " welcome to our " + b);
+  --------------------------------------------------------------------------------
+  1.6 ternary operator
+      
+      syntax:
+                condition ? valueIFTrue   :  valueIfFalse;
+Example:
+          
+
+let age = 17;
+
+let result = (age >=18) ? "elgible"  : "notelgible"
+console.log(result); 
+-------------------------------------------------------------------------------
+1.7 type operator
+
+   typeof     ---- type check
+   instanceof ---- object instance back
+
+   Example:
+    console.log(typeof 39);
+console.log([1,2] instanceof Array);
+----------------------------------------------------------------------------------
+1.8 Bitwise operator
+
+
+1.  &  - AND
+2.  ^  - XOR
+3.  ~  - NOT
+4.  << - left shift
+5.  >> - right shift
+
+Example:
+let a = 5;
+let b = 3;
+
+console.log("ANd (a &b): " , a & b);
+console.log("OR(a|B): ", a | b);
+console.log("XOR (a ^ b) :", a ^ b);
+task:
+~,<<,>>
+----------------------------------------------------------------------------
+2. Array:
+           -Array is data structure used to store multiple values in a single variable.
+           -values inside an array are stored in index [position(index start with 0(0,1,2))].
+           - Atray can store any type(numbers, strings, onjects, functions).
+
+          
+    syntax:
+           let arrayName = [value1, value2];
+
+           Example:
+           let fruits = ["apple","Mango", "banana"];
+
+console.log(fruits);
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits.length);
+--------------------------------------------------------
+2.1 Array methods:
+
+1. push()- add item to end of the array 
+         - it only applicable for array 
+    Example:
+            
+let a = [1,2,3,4,5];
+a.push(6);
+console.log(a);
+Example2:
+let a= [1,2,3,4,5];
+let cart =[1];
+cart.push(3);
+
+console.log(cart);
+
+----------------------------------------------------------
+2.pop():
+        -Remove item  end of the array
+         - it only applicable for array 
+         Example:
+         
+let a = [1,2,3,4,5];
+a.pop();
+console.log(a);
+----------------------------------------------------------------
+3.unshift()
+           - it add item to beginning of array 
+           - it only applicable for array 
+    Example:
+    let a = [1,2,3,4,5];
+a.unshift(9);
+console.log(a);
+-------------------------------------------------------------
+4. shift()
+          -it will remove first value from the array.
+           - it only applicable for array .
+
+           Example:
+           
+let a = [1,2,3,4,5];
+a.shift();
+console.log(a);
+-------------------------------------------------------------
+5.indexof()
+           - find index
+        Example:
+           
+
+let a = [1,2,3,4,5];
+
+console.log(a.indexOf(3));
+-------------------------------------------------------------
+6. includes()
+             -it will chech the value  exist orr not .
+
+
+Example:
+         
+let a = [1,2,3,4,5];
+
+console.log(a.includes(8));
+-------------------------------------------------------------
+
+
+
+
+         
+
+  
+            
