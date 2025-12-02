@@ -1,0 +1,208 @@
+7.slice():
+        copy part of the array.
+        it having two index(first index is including and second index is excluding)(1,3).
+
+    Example:
+               //      0  1   2  3b   including , excluding   1,2.
+               let a =[10,20,30,40];
+               console.log(a.slice(1,3));
+-------------------------------------------------------------
+ 8.splice():
+               Add/Remove items(changes array).
+               syntax:
+                      array.splice(startindex,delete count,add items);
+       Example:
+              //      0  1   2  3  4  5  6  7  8   
+let a =[10,20,30,40,50,60,70,80,90];
+
+a.splice(1,1);
+console.log(a);
+
+       //      0        1        2
+let fruits =["apple","banana", "orange"];
+fruits.splice(0,2,"grapes");
+ //start index  ,count,add
+console.log(fruits);
+
+      //   0   1   2    3  4
+let arr= ["A","b","c","d","e"];
+arr.splice(1,3)
+console.log(arr);
+------------------------------------------------------------------------------------
+9.join()
+        array-string
+
+        Example:
+        let a = ["hi", "harish"];
+
+console.log(a.join(" "));
+output:
+hi harish
+--------------------------------------------------------------------------------------
+10.reverse()
+
+let number = [1,2,3,4,5,6,7,8,9,10];
+number.reverse();
+console.log(number);
+--------------------------------------------------------------------
+11.sort()
+Ecample:
+
+let a = [5,2,9,4,7,1,6];
+a.sort();
+console.log(a);
+output:
+
+   [
+  1, 2, 4, 5,
+  6, 7, 9
+]  
+------------------------------------------------------
+12.find()
+        first matching value
+       Example:
+       let a =[10,20,30,40,50];
+
+let b = a.find(x => x > 20);
+console.log(b);
+---------------------------------------------------
+13.findindex
+    findIndex() checks the each element in an array .
+                
+let a = [1,2,3,4,5];
+
+console.log(a.findIndex(x => x === 2));
+
+output:
+        1
+--------------------------------------------------
+14.flat():
+         flat() convertsnested array to single array.
+         syntax:
+            flat(n)-it will flatten the array up to n levels deep.
+  Example:
+          
+let a =[1,[2,3],[4,[5]]];
+console.log(a.flat(1));
+----------------------------------------------------------
+ 15. toString()
+ example:
+ let a =[1,2,3,4];
+console.log(a.toString());
+---------------------------------------------------------------
+MRF ,forEach
+
+M-Map 
+R-reduce
+F-filter
+
+map():
+       map() creates a new array 
+       it does not change the original array 
+       it is mainly used when you want to transform all items 
+
+    Example:
+          
+let a =[1,2,3];
+             
+            // 1   1 *2=2 
+            // 2   2 *2=4
+            // 3   3 *2=6
+let b = a.map(x => x * 2);
+
+console.log(a);//1,2,3
+console.log(b);//2,4,6   
+-----------------------------------------------------------------------
+filter():
+            it creats new array 
+            it does not change the orginal array
+            it is mainly used to remove unwanted values. or pick onlyu matching items
+
+Example:
+             let a =[10,20,30,40];
+
+let b =a.filter(x => x > 20);
+
+console.log(a);
+ 
+console.log(b);
+
+Example:
+        
+
+
+let products = [
+    {name: "mobile", price:10000},
+    {name: "headphone",price:500},
+    {
+        name: "laptop",price:20000
+    }
+];
+
+let result = products.filter(p => p.price > 12000);
+
+console.log(result);
+-----------------------------------------------------------
+reduce()
+         total/sum
+   Example:
+    let a =[1,2,3,4,5];
+                    // 0   1       0+1=1
+                 //    1   2       1+2=3
+                 //    3    3      3+3 =6
+                 //    6    4      6+4=10
+                 //    10   5       10+5=15
+let total = a.reduce((acc,curr)=> acc+curr , 0);
+
+console.log(total);
+-------------------------------------------------------------------------------------------------------------------------
+2.object:
+      Example:
+      
+let student = {
+    name: "john",
+    age: 25,
+    course:"mernstack"
+}
+console.log(student);
+console.log(student.name);
+console.log(student["course"]);
+-----------------------------------
+nested object 
+Example:
+let student = {
+    name: "john",
+    age: 25,
+    course:"mernstack",
+    address:
+    {
+        city:"chennai",
+        pincode:600053
+    }
+};
+console.log(student);
+console.log(student.name);
+console.log(student["course"]);
+console.log(student.address.city);
+
+
+  ------------------------------------------
+  object methods
+   
+example:
+
+let person = {
+    name:"harish",
+    city:"chennai"
+
+};
+//add a new key
+person.age= 23;
+
+//remove key
+delete person.city;
+
+console.log(person);
+--------------------------------------------
+foreach, class object,constructor 
+
