@@ -1,0 +1,221 @@
+loop
+
+1. while loop:
+                - Runs only when the condition is true.
+                - must update the value inside the loop 
+                 - if the condition never becomes false, it becomes an infinite loop.
+
+    syntax:
+             while(condition)
+             {
+                //code
+             }
+    Example:
+              
+   let i =1;
+
+   while(i <= 5)
+   {
+    console.log(i);
+    i++;
+   }
+------------------------------------------------
+2. do..while
+  
+        - the code runs at least one time before checking the condition
+        - after running once,it checks the condition.
+        - continues as long as the condition is true.
+    syntax:
+
+    do{
+        //code
+    }
+    while(condition);
+
+example:
+     let j =1;
+do 
+{
+    console.log(j);
+    j++;
+}
+
+while(j <= 5);
+-------------------------------------------------------------------------------------
+3. for
+        - Used to repeat something a fixed number of times.
+        - it runs from a start value to an  end value.
+        - the value changes every loop(incease or decrease) 
+
+syntax:
+        for(inilize; condition;increment/decrement)
+        {
+            //code
+        }
+Example:
+          for(let i =1; i<=5; i++)
+            {
+             console.log(i);
+              }
+---------------------------------------------------------------------------------------
+4. for...of
+           - Used to get each value from an array.
+           - gives values directly without index.
+           - very simple and clean to work.
+
+syntax:
+         for(let value of array)
+         {
+            //code 
+         }
+      
+ Examples:
+ let fruits = ["apple", "mango", "banana"];
+
+for(let f of fruits)
+{
+    console.log(f);
+}
+
+//-------------------------------------------------
+   const fname ="harish";
+
+   for(const letter of fname)
+   {
+    console.log(letter);
+   }
+   //-------------------------------------------
+--------------------------------------------------------------------------------------
+task: 5.for...in
+           
+
+forEach:
+
+
+------------------------------------------------------------------------------------------------------
+2. function:
+              
+           -to perform a perticiular task.
+           - to avoid repetation of code 
+           -return: to get the value outside of the function.
+
+types:
+1. Function declaration/nomal Function
+2. Arrow Function
+3. IIFE Function
+4. Function /Anonymous
+
+ 1. function declaration/normal function:
+
+ syntax:
+        function functionName(parameter)
+        {
+            //code 
+        }             
+Example:
+         function call()
+    {
+        console.log("Hi Im normal function or function declaration");
+    }
+    call();
+-----------------------------------------------
+
+    function add(a, b)//paameter
+    {
+        return a+b;
+    }
+
+    console.log(add(5,2));//argument
+
+-----------------------------------------
+    function sub()
+    {
+        let a=10;
+        let b=20;
+        return b-a;
+
+    }
+    console.log(sub());
+------------------------------------------
+2.Function expresstion
+      
+         -function withoutname , often used as argument to other function 
+         -use case: mostly if any events
+         -syntax: var functionName = function(paameter){//code}
+  Example:
+                  var sub = function(c,d)
+                      {
+                         return c-d;
+                       }
+
+                   console.log(sub(5,3));
+-----------------------------------------------------------------------
+3.IIFE Function- Immediately InvokedFunction Exapression
+       
+             -Immediately delete the values after using ,because it has limited memory space
+    syntax:
+            (function(){
+                //code
+            })();
+
+Example:
+           (function ()
+{
+    console.log("this function runs immediately and it dont have ,memory");
+})();
+-----------------------------------------------------------------------------------
+4.Arrow funtion:
+                
+    sysntax:
+             const funtionName = () =>{
+                //code
+             } 
+
+Example:
+          const greet =() =>{
+    console.log("Hi , my name is arroe function , developes using me in all places");
+} 
+greet();
+Example2:
+          const square = (num)=>{
+    return num * num;
+};
+console.log(square(5));
+-----------------------------------------------------------------------------------------------------
+3. scope 
+
+1. Global scope
+2. Function scope
+3. Block scope
+
+1.var - declare a variable (global/function scope)
+2.let - declarre a blocked scope variable
+3.const-declare a block-scoped constant(can not be resigned)
+
+1. global scope:
+  Example:
+              {
+               var d =40;//global scope-var
+              }
+            console.log(d);
+
+--------------------------------------------------------
+2.function scope:
+Example:
+  let y=10;//block scope
+          function test()
+   {
+ 
+     console.log(y);
+   }
+   test();
+-------------------------------------------------------------
+3.block scope:
+           {
+          const e =50;
+           }
+          console.log(e);//block scope 
+-------------------------------------------------------------
+
+
+          
