@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">hero</h1>
+    <button onclick="changeText()">clickme</button>
+    <div id="container"></div>
+    <button onclick="addElement()">Add</button>
+   <script>
+    function changeText(){
+    const  storage = document.getElementById("heading");
+    storage.textContent ="harish";
+    }
+
+    function addElement(){
+        let newH1 = document.createElement("h1");
+
+        newH1.textContent="hello ";
+
+        let box = document.getElementById("container");
+
+       box.appendChild(newH1); 
+    }
+   </script>
+</body>
+</html>
