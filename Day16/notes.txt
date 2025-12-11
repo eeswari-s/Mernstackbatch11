@@ -1,0 +1,13 @@
+1. Dom properties:
+
+innerHtml
+innerText
+textContent
+Values
+src,href
+style
+classList(add,remove)
+id,name
+
+1.innerHTML:
+          

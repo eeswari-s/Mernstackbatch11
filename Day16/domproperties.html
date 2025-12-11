@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM Properties</h1>
+    <div id="textBook" class="demoClass">
+        <b>Hello Harish</b>
+        <p>im a para </p>
+        <h1>im h1 tag</h1>
+    </div>
+    <input id="inputbox" value="mern stack developer">
+    <label for="username">Enter your Name:</label>
+    <input type="text" id="username" placeholder="type here...">
+    <button onclick="user()">submit</button>
+    <a id="mylink" href="https://www.amazon.in/ref=nav_logo">Amazon</a>
+    <img id="myimg" src="https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/content-assets/images/20240706_LDD003.jpg" >
+
+    <h1 id="eb" class="color">ecom</h1>
+    <script>
+        console.log("Dom Properties");
+        //===================
+        //innerHTML
+        //================
+        let htmlbox =document.getElementById("textBook");
+        console.log("innerhtml: ",htmlbox.innerHTML);
+        console.log("innerhtml: ",htmlbox.innerText);
+        console.log("innerhtml: ",htmlbox.textContent);
+//====================================================
+//value
+//===================================================
+let  input=document.getElementById("inputbox");
+console.log("value: ",input.value);
+
+
+
+function user(){
+const text1= document.getElementById("username").value;
+console.log("user entered name: ",text1);
+}
+
+//=============================================
+//link,src
+//==============================================
+let link =document.getElementById("mylink");
+let img =document.getElementById("myimg");
+console.log("href: ",link.href);
+console.log("img: ",img.src);
+//=============================================
+//id,class
+//=========================================
+console.log("id: ",htmlbox.id);
+htmlbox.id="newText";
+console.log("newid: ",htmlbox.id);
+
+    </script>
+</body>
+</html>

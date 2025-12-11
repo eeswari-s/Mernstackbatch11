@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">original</div>
+   
+    <button onclick="demo()">submit</button>
+    <script>
+        function demo(){
+//===================================
+//createelement
+//===================================
+        let para =document.createElement("p");//<p></p>
+        para.innerText ="im a new paragraph";//<p>im a new paragraph</p>
+        console.log("created new <p> element");
+//======================
+//append
+//======================
+    let content =document.getElementById("container");
+    // content.append(para);//<div>original im a new paragraph</div>
+    console.log("append(): added a paragraph tag in to container");
+//===================================================================
+//appendchild
+//====================================================================
+
+
+
+     let inline=document.createElement("h1");//<span></span>
+     inline.innerText="(Added using appendchild)";//<span>(Added using appendchild)</span>
+    //  content.appendChild(inline);////<div>original<p> im a new paragraph</p> | <span>(Added using appendchild)</span> |</div>
+     console.log("appendchild completed");
+
+     content.append(para,inline);
+
+     let number =document.create
+        }
+
+    </script>
+</body>
+</html>
