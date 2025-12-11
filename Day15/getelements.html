@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome</h1>
+    <!-- getElementById -->
+    <div id="google">This is id based para</div>
+    <div id="google">im second text</div>
+    <!-- getelementbycalssname -->
+     <h1>getelementsbyclassname</h1>
+     <p class="item">All</p>
+     <p class="item">numbers</p>
+     <p class="item">here</p>
+     <!-- getelementbytagname -->
+      <h1>getelementbytagname</h1>
+      <h1>Tag one</h1>
+      <h1>Tag two</h1>
+      <!-- queryselector -->
+       <h1>queryselector</h1>
+       <div class="a">
+        <p>para</p>
+        <h1>heading1</h1>
+       </div>
+       <p class="a">second selector</p>
+       <!-- queryselectorall -->
+        <h1>queryselectorall</h1>
+        <p class="a">list one</p>
+        <p class="a">list two</p>
+        <p class="a">list three</p>
+<script>
+    //1.getElementById
+
+    let a=10;
+    console.log(a);
+let search =document.getElementById("google");
+console.log("getElemetbyid: ",search.innerText);
+//================================================
+//getelemetbyclassname
+//================================================
+let yahoo =document.getElementsByClassName("item");
+console.log("getelementbyclassname: ",yahoo[0].innerText,"|",yahoo[1].innerText,"|",yahoo[2].innerText,);
+//================================================
+//getelemetbytagname
+//================================================
+let tag =document.getElementsByTagName("h1");
+console.log("getelementbytagname: ",tag.length);
+console.log("getelementbytagname: ",tag[0].innerText);
+console.log("getelementbytagname: ",tag[1].innerText);
+console.log("getelementbytagname: ",tag[2].innerText);
+console.log("getelementbytagname: ",tag[3].innerText);
+console.log("getelementbytagname: ",tag[4].innerText);
+//================================================
+//queryselector
+//================================================
+let qs =document.querySelector(".a");
+console.log("queryselector: ",qs.innerText);
+
+//================================================
+//queryselector
+//================================================
+let qsa =document.querySelectorAll(".a")
+console.log("queryselectorall: ");
+qsa.forEach((ele)=>console.log(ele.innerText));
+</script>
+</body>
+</html>

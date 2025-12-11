@@ -1,0 +1,76 @@
+1.DOM: Document object Model 
+
+  -Programming interface that represts HTML as a tree structue.
+  -Allows JavaScript to access and modify elements,attributs and content.
+  -Every HTML tag becames a node in the DOM tree.
+-----------------------------------------------------------------------------
+2.Document Tree structure:
+
+     - the html document is converted into a hierarchical tree of nodes.
+     -the root is document, then html, head,body and child elements.
+     -tree traversal allows selection and manipulating elements.
+------------------------------------------------------------------------------------
+3.Node/ Element/Attribute/Text
+
+Node: Anything inside the DOM(elements,test,comment).
+
+Element Node: actual html tags like <div>,<p>.
+
+Attribute: Values inside tags(id,class,src).
+
+text nodes:The text contained inside an element.
+-----------------------------------------------------------------------------------
+window object:
+               Global object for browser java JavaScript.
+               All functions like alert,setTimeout,document exist inside window.
+               Accessing window properties is optional(implicit).
+------------------------------------------------------------------------------
+DOM SELECTORS
+1.getElementById()
+                   selects a single element by its unique ID.
+                   Returns only one element.
+                   Fastest DOM selection method.
+    syntx:
+               document.getElementById("idname");
+-----------------------------------------------------------------------------
+2.getElementByClassNmae()
+              selects all elements with the given class name .
+              returns like array 
+              must use index to access items.
+    document.getElementByClassName("classname");
+--------------------------------------------------------------------------
+ 3.getElementByTagName():
+              -selects elements by their tag name.
+              returns multiple elements.
+    syntax:
+            document.getElementByTagName("tagName");
+----------------------------------------------------------------------------
+4.queryselector()
+                 selects the first element that matches a css selector
+                 more than flexible(id,class,attributes).
+                 returns a single element.
+        syntax:
+                document.queryselector(".selector");
+----------------------------------------------------------------------------
+5.queryselectorall():
+                  selects all elements matching a css selector.
+                  returns a nodelist(suports forEach).
+                  very commonly used for nodejs.
+    syntax: 
+            document.queryselectorall(".selectors");
+=========================================================================================================
+
+3.DOM Properties:
+ 1.innerHtml
+ 2.innerText
+ 3.textContent
+ 4.Values
+ 5.src,href
+ 6.style
+ 7.classlist(add, remove)
+ 8.id,name
+
+1.innerHtml
+           retuns html
+
+
