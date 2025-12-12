@@ -10,4 +10,14 @@ classList(add,remove)
 id,name
 
 1.innerHTML:
+
+
+//task
+       <div>
+       <h1>content</h1>
+       <p>content</p>
+       <button>submit</button>
+       </div>
+
+       function
           

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!------------------------2.va;lidation------------------>
+    <input id="user" type="email" placeholder="enter email" required>
+    <button onclick="checkemail()">submit</button>
+    <h1 id="msg"></h1>
+    <script>
+
+        function checkemail(){
+        let email =document.getElementById("user").value;
+        if(email=== ""){
+        document.getElementById("msg").innerText="email is required";
+    }
+    else{
+        document.getElementById("msg").innerText="valid email";
+    }
+}
+    </script>
+</body>
+</html>

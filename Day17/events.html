@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-------onclick-->
+    <button onclick="msg()">submit</button>
+
+        <!-------onchange------------------>
+        <select onchange="color(this.value)">
+            <option>red</option>
+            <option>blue</option>
+            <option>black</option>
+        </select>
+
+        <input type="text" id="username" onchange="showName()" placeholder="Enter your name">
+ <!--------------------------------oninput------------------>
+<input oninput="live(this.value)" placeholder="enter something">
+
+ <!--------------------------------onkeyup------------------>
+ <input onkeyup="checkkey(event)" placeholder="type anything">
+ <!--------------------------------onkeydown------------------>
+  <input onkeydown="checkkey(event)" placeholder="type anything">
+ <!--------------------------------mousehover/mouseout------------------>
+<div onmouseover="enterdiv()" onmouseout="left()">Hover me</div>
+ <!--------------------------------submitevent------------------>
+ <form id="myform">
+    <input type="text" placeholder="ente">
+    <button>submit</button>
+ </form>
+  <!--------------------------------addeventlistner------------------>
+  <button id="btn">click</button>
+    <script>
+        //=======================
+        //onclick
+        //======================
+        function msg()
+        {
+            prompt("Enter your name");
+            alert("button clicked");
+            console.log("all done");
+        }
+    //=======================
+        //onchange
+        //======================
+function color(value){
+    console.log("you selected: ",value)
+}
+   //---------------------------------
+   function showName()
+   {
+    let fname = document.getElementById("username").value;
+    console.log("Name: ",fname);
+   } 
+
+       //=======================
+        //oninput
+        //======================
+        function live(text)
+        {
+            console.log("typing: ",text)
+        }
+  //=======================
+        //onkeyup
+        //====================== 
+        function checkkey(e){
+            console.log("type: ",e.key);
+        }
+    //=======================
+        //onmouseover ,onmouseleft
+        //======================     
+        function enterdiv()
+        {
+            console.log("mouse entered");
+            // alert("hi");
+        } 
+        function left()
+        {
+            console.log("mouse left");
+        }
+
+//============================================================
+//submitevent
+//========================================================
+document.getElementById("myform").onsubmit=function(e){
+    e.preventDefault();
+    console.log("form submited");
+}
+
+//============================================================
+//addEventListener
+//========================================================
+document.getElementById("btn").addEventListener("click",()=>{
+    console.log("button clicked using addeventlistener");
+})
+//task:eventobject 
+//e.target
+
+    </script>
+</body>
+</html>
