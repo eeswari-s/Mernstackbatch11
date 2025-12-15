@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <style>
+    :root{
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #0f62fe;
+      --btn-bg: #111827;
+      --btn-color: #fff;
+      --shadow: 0 6px 18px rgba(16,24,40,0.08);
+    }
+
+    /* dark theme variables */
+    body.dark {
+      --bg: #0b1220;
+      --card: #071226;
+      --text: #e6eef8;
+      --muted: #9aa8bf;
+      --accent: #7cc3ff;
+      --btn-bg: #e6eef8;
+      --btn-color: #071226;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* NAVBAR */
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 28px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(0,0,0,0.02));
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .logo {
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent), #6b46c1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+    .brand h1{ margin:0; font-size:18px; }
+    .nav-right { display:flex; align-items:center; gap:12px; }
+
+    .nav a{ color:var(--muted); text-decoration:none; font-size:14px; }
+    .theme-toggle {
+      padding:8px 12px;
+      border-radius:8px;
+      background:transparent;
+      border:1px solid rgba(0,0,0,0.06);
+      cursor:pointer;
+      color:var(--muted);
+    }
+
+    .cart-badge {
+      background:var(--accent);
+      color:white;
+      padding:6px 10px;
+      border-radius:20px;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* MAIN LAYOUT */
+    .container {
+      display:flex;
+      gap:24px;
+      padding:24px;
+      align-items:flex-start;
+      width:100%;
+    }
+
+    /* PRODUCTS (left) */
+    .left {
+      width:70%;
+    }
+
+    .controls {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .search {
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .search input{
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,0.06);
+      background:var(--card);
+      color:var(--text);
+      outline:none;
+      width:320px;
+      box-shadow:var(--shadow);
+    }
+
+    .filters { display:flex; gap:10px; flex-wrap:wrap; }
+    .filter-btn {
+      padding:8px 12px;
+      border-radius:8px;
+      border:none;
+      background:transparent;
+      cursor:pointer;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .filter-btn.active {
+      background:var(--accent);
+      color:white;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap:18px;
+    }
+
+    .card {
+      background:var(--card);
+      border-radius:12px;
+      padding:12px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      transition:transform .18s;
+    }
+    .card:hover{ transform:translateY(-6px); }
+
+    .thumb {
+      height:150px;
+      border-radius:10px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .meta { display:flex; justify-content:space-between; align-items:center; }
+    .name { font-weight:700; font-size:16px; margin:0; color:var(--text); }
+    .rating { color:var(--muted); font-size:13px; }
+
+    .price { display:flex; gap:10px; align-items:center; }
+    .old { color:#e53935; text-decoration:line-through; font-weight:600; }
+    .new { font-weight:800; color:var(--text); }
+
+    .desc { color:var(--muted); font-size:13px; min-height:36px; }
+
+    .card-actions { display:flex; gap:8px; margin-top:auto; }
+    .btn {
+      border:none;
+      padding:10px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .btn.primary {
+      background:var(--btn-bg);
+      color:var(--btn-color);
+      flex:1;
+    }
+    .btn.ghost {
+      background:transparent;
+      border:1px solid rgba(0,0,0,0.06);
+      color:var(--muted);
+    }
+
+    /* RIGHT CART */
+    .right {
+      width:30%;
+      position:relative;
+    }
+
+    .cart {
+      position:sticky;
+      top:20px;
+      background:var(--card);
+      padding:16px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      max-height:80vh;
+      overflow:auto;
+    }
+
+    .cart h3 { margin:6px 0 12px 0; }
+    .cart-item {
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:10px;
+      border-radius:8px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.01), transparent);
+      margin-bottom:10px;
+    }
+    .cart-item img { width:64px; height:64px; object-fit:cover; border-radius:8px; }
+    .ci-meta { flex:1; }
+    .qty {
+      display:flex;
+      gap:6px;
+      align-items:center;
+    }
+    .small-btn {
+      border:none;
+      padding:6px 8px;
+      border-radius:6px;
+      cursor:pointer;
+      background:rgba(0,0,0,0.06);
+    }
+
+    .total {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:12px;
+      font-weight:800;
+      font-size:18px;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .container { flex-direction:column; padding:12px; }
+      .left, .right { width:100%; }
+      .search input { width:100%; }
+      .nav { padding:10px; }
+    }
+  </style>
+<!-- NAV -->
+  <header class="nav">
+    <a class="brand" href="#">
+      <div class="logo">B11</div>
+      <div>
+        <h1>B11 World</h1>
+        <div style="font-size:12px; color:var(--muted)"> demo</div>
+      </div>
+    </a>
+
+    <div class="nav-right">
+      <a href="#" onclick="displayProducts();return false;">Products</a>
+      <a href="#" onclick="filterUi('elactronics')">Electronics</a>
+      <a href="#" onclick="">Fashion</a>
+
+      <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Theme</button>
+
+      <div class="cart-badge" id="cartCount">0</div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <!-- LEFT -->
+    <section class="left">
+      <div class="controls">
+        <div class="search">
+          <input id="searchBox" placeholder="Search product..." oninput="searchProducts()">
+        </div>
+
+        <div class="filters" id="filterWrap">
+          <button class="filter-btn active" onclick="filterByButton(this,'All')">All</button>
+          <button class="filter-btn" onclick="filterByButton(this,'Electronics')">Electronics</button>
+          <button class="filter-btn" onclick="filterByButton(this,'Accessories')">Accessories</button>
+          <button class="filter-btn" onclick="filterByButton(this,'Fashion')">Fashion</button>
+          <button class="filter-btn" onclick="filterByButton(this,'Wearable')">Wearable</button>
+        </div>
+      </div>
+
+      <div class="grid" id="products"></div>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="right">
+      <div class="cart" id="cartBox">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+
+        <div class="total">
+          <div>Total</div>
+          <div id="totalAmount">Rs. 0</div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:8px;">
+          <button class="btn primary" onclick="checkout();">Checkout</button>
+          <button class="btn ghost" onclick="clearCart()">Clear</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <script>
+    //PRODUCTS DATA
+    const products = [
+    {id:1,name:"laptop",price:55000,category:"Electronics", description:"i5 Procrssor,16gb Ram", rating: 4.5,image:"https://m.media-amazon.com/images/I/510uTHyDqGL.jpg"},
+    {id:2,name:"Phone",price:25000,category:"Electronics",
+     description:"1 TB: 17.42 cm (6.9″) Display with Promotion, ", rating: 4.2 ,image:"https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-card-40-17-202509_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=WVVFRzUzVk1oblJhbW9PbGNSU25jckJGdUIrY1B0R3cwWTRVMzRnT1RWUmZMQnBkTWowcTVzai9uUEgzVDdYM3NtS0NkZnlUKzBRdlpRai9zMDR0cTQ2SzdvNlo3RnBaVmExOWFYbG5HREhZVGtLdlpieFJ0bE9GNURYSnYrUWw"},
+    {id:3,name:"Headphones",price:2000,category:"Accessories", description:"Active Noise Cancelling in Ear Headphones", rating: 4.0,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLfQYVl9EhwW4UMUXto_GVpwi_29pWVTWZLQ&s"},
+    {id:4,name:"Keyboard",price:1000,category:"Accessories", description:"Cool RGB Backlight Waterproof Keyboard", rating: 3.8,image:"https://images-cdn.ubuy.co.in/63400c68afe02d2b0c7aeb85-mechanical-gaming-keyboard-87-keys-small.jpg"},
+    {id:5,name:"smartwatch",price:3500,category:"wearable", description:"1.39 Display Metal Build", rating: 4.0,image:"https://hammeronline.in/cdn/shop/files/Hammerfit.webp?v=1694859121"},
+    {id:6,name:"Led Tv",price:40000,category:"Electronics", description:"VW 80 cm (32 inches) ", rating: 4.5,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfnh1Xt4PcwhkGXzLOziv9gELExwwHDVSEfA&s"},
+    {id:7,name:"shoes",price:1500,category:"Fashion", description:"Lightweight Comfortable Slip", rating: 4.4,image:"https://img.clevup.in/352617/casual-shoes-1707911015192_SKU-6546_0.jpg?width=600&format=webp"},
+    {id:8,name:"tablet",price:15000,category:"Electronics", description:"i5 Procrssor,16gb Ram", rating: 3.7,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh48ei1OkOC1URIJ5VSCSf9g2q0Cd9qWq-ww&s"},
+    {id:9,name:"power bank",price:1200,category:"Accessories", description:"i5 Procrssor,16gb Ram", rating: 3.5,image:"https://ambraneindia.com/cdn/shop/files/powerlitultralisting_1_11zon.jpg?v=1711515528&width=1000"},
+    {id:10,name:"dress",price:3000,category:"Fashion", description:"Fit & Flare Wrap Dress", rating: 4.5,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb1yAudCaCIQ5GFqLb6Rm_PpoTLsMpxth8rQ&s"}
+
+];
+
+    // ===== discount logic same as yours (map) =====
+    function getDiscountedProducts(){
+      return products.map(item => ({
+        ...item,
+        oldPrice: item.price,
+        discountPrice: Math.round(item.price * 0.9)
+      }));
+    }
+
+    // ===== render products (forEach) =====
+    function displayProducts(list = getDiscountedProducts()){
+      const box = document.getElementById('products');
+      box.innerHTML = '';
+
+      list.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <div class="thumb"><img src="${p.image}" alt="${p.name}"></div>
+          <div class="meta">
+            <div><p class="name">${p.name}</p><div class="desc">${p.description}</div></div>
+            <div class="rating">⭐ ${p.rating}</div>
+          </div>
+          <div class="price">
+            <div class="old">Rs.${p.oldPrice}</div>
+            <div class="new">Rs.${p.discountPrice}</div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn ghost" onclick="viewDetails(${p.id})">Details</button>
+            <button class="btn primary" onclick="addToCart(${p.id})">Add to Cart</button>
+          </div>
+        `;
+        box.appendChild(el);
+      });
+      updateCartCount();
+    }
+
+    // ===== filter by button (UI active class) =====
+    function filterByButton(btn, name){
+      Array.from(document.querySelectorAll('.filter-btn')).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if(name === 'All') return displayProducts();
+      const filtered = getDiscountedProducts().filter(p => p.category === name);
+      displayProducts(filtered);
+    }
+
+    // ===== search (oninput) =====
+    function searchProductUI(){
+      const key = document.getElementById('searchBox').value.toLowerCase();
+      const result = getDiscountedProducts().filter(p => p.name.toLowerCase().includes(key));
+      displayProducts(result);
+    }
+
+    // ===== CART logic (same methods) =====
+    let cart = [];
+
+    function addToCart(id){
+      const product = getDiscountedProducts().find(p => p.id === id);
+      if(!product) return;
+
+      const existing = cart.find(c => c.id === id);
+      if(existing){
+        existing.qty++;
+      } else {
+        cart.push({...product, qty:1});
+      }
+      showCartUI();
+      updateCartCount();
+    }
+
+    function removeFromCart(id){
+      cart = cart.filter(i => i.id !== id);
+      showCartUI();
+      updateCartCount();
+    }
+
+    function changeQty(id, delta){
+      const it = cart.find(c => c.id === id);
+      if(!it) return;
+      it.qty += delta;
+      if(it.qty < 1) it.qty = 1;
+      showCartUI();
+      updateCartCount();
+    }
+
+    function showCartUI(){
+      const box = document.getElementById('cartItems');
+      const totalBox = document.getElementById('totalAmount');
+
+      box.innerHTML = '';
+      let total = 0;
+
+      if(cart.length === 0){
+        box.innerHTML = '<div style="color:var(--muted)">Your cart is empty</div>';
+      } else {
+        cart.forEach(item => {
+          total += item.discountPrice * item.qty;
+          const div = document.createElement('div');
+          div.className = 'cart-item';
+          div.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="ci-meta">
+              <div style="font-weight:700">${item.name}</div>
+              <div style="color:var(--muted); font-size:13px">Rs.${item.discountPrice} x ${item.qty}</div>
+            </div>
+            <div>
+              <div class="qty">
+                <button class="small-btn" onclick="changeQty(${item.id}, -1)">−</button>
+                <div style="min-width:26px; text-align:center">${item.qty}</div>
+                <button class="small-btn" onclick="changeQty(${item.id}, 1)">+</button>
+              </div>
+              <div style="margin-top:8px; text-align:right">
+                <button class="small-btn" onclick="removeFromCart(${item.id})">Remove</button>
+              </div>
+            </div>
+          `;
+          box.appendChild(div);
+        });
+      }
+
+      totalBox.textContent = 'Rs. ' + total;
+    }
+
+    function clearCart(){
+      cart = [];
+      showCartUI();
+      updateCartCount();
+    }
+
+    function checkout(){
+      if(cart.length === 0) return alert('Cart is empty');
+      alert('Checkout — total ' + document.getElementById('totalAmount').textContent);
+    }
+
+    // small details: navbar count
+    function updateCartCount(){
+      const count = cart.reduce((s,i) => s + i.qty, 0);
+      document.getElementById('cartCount').textContent = count;
+    }
+
+    // product details simple modal-ish (using alert for simplicity)
+    function viewDetails(id){
+      const p = getDiscountedProducts().find(x => x.id === id);
+      if(!p) return;
+      const txt = `${p.name}\n\n${p.description}\nCategory: ${p.category}\nRating: ${p.rating}\nOld: Rs.${p.oldPrice}\nNow: Rs.${p.discountPrice}`;
+      alert(txt);
+    }
+
+    // ===== THEME: toggle + save to localStorage =====
+    function applyTheme(t){
+      if(t === 'dark') document.body.classList.add('dark');
+      else document.body.classList.remove('dark');
+      localStorage.setItem('suki_theme', t);
+      document.getElementById('themeBtn').textContent = t === 'dark' ? 'Dark' : 'Light';
+    }
+
+    function toggleTheme(){
+      const isDark = document.body.classList.contains('dark');
+      applyTheme(isDark ? 'light' : 'dark');
+    }
+
+    // init theme on load
+    (function init(){
+      const saved = localStorage.getItem('suki_theme') || 'light';
+      applyTheme(saved);
+      displayProducts();
+      showCartUI();
+    })();
+  
+  </script>
+</body>
+</html>
