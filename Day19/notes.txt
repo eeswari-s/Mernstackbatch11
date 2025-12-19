@@ -1,0 +1,73 @@
+scope:
+       scope means whee a variable can be used inside the code.
+
+type of the code:
+                      Global scope
+                      function scope
+                      block scope
+1.Global scope:
+                A variable creatyed outside any function or block.
+                   It can be used anywhere in the file.  
+
+
+ Example:
+
+let x = 10; // global
+
+console.log(x); // works everywhere
+2. Function Scope:
+                   A variable created inside a function.
+                  It can be used only inside that function.
+                  Outside the function → not accessible.
+3.Block Scope
+        A variable created inside curly braces { }.
+       It can be used only inside that block.
+       Works only for let and const (not for var).
+ =================================================================================================
+ 2.closures:
+                A function remembers the variables from the place where it was created.
+               Even after the outer function finishes, inner function can still access those variables.
+               This “memory” saved along with the function is called a closure.
+ ===================================================================================================
+ 3.lexical:
+              A function is allowed to access variables from the place where it is written (its birth place).
+Not from where it is called.
+             
+======================================================================================================
+4.this:
+        The value of “this” depends on how a function is called, not where it is written.
+        In object methods, “this” refers to the object that calls the method.
+       Arrow functions do not have their own “this”; they use “this” from their parent scope.
+
+1.call() invokes the function immediately and lets you set this + pass arg
+2.apply() is same as call(), but arguments must be passed as an array.
+3.bind() does NOT run immediately; it returns a new function with this permanently set.
+                BIND() – does NOT call… returns a NEW FUNCTION
+=======================================================================================================
+5.synchronous:
+                synchronous code runs step-by-step , line by line.
+                js waits for each task to finish before moving to another.
+                if a task is slow, the entire program is blocked until that task completes.
+
+Asynchronous:
+               Asynchronous cose does not block the code. it runs tasks in the background.
+               js immidiately continues to next line.
+
+======================================================================================================
+6.setTimeout:
+               setTimeout is a javasript function that runs a pies of code after a specific delay.
+               delay= milliseconds(1000ms = 1 second)
+               It does not block the code the remaining code.
+
+syntax:
+//setTimeout(()=>{
+    //code
+// },milliseconds);
+========================================================================================================
+7.setinterval
+
+
+syntax:
+           setinterval(callbackfunction,delayseconds);
+
+              

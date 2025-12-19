@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Calculator</title>
+    <style>
+       body{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background: orange;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+       } 
+       .card{
+        background: turquoise;
+        padding: 20px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+       }
+       h1{
+        text-align: center;
+        color: white;
+       }
+       input{
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+       }
+       button{
+        width: 100%;
+        padding: 10px;
+        background: orange;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+       }
+       button:hover{
+        background: rgb(119, 76, 219);
+         box-shadow: 0 0 10px rgba(0,0,0,0.3);
+       }
+       .result{
+        margin-top: 20px;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+       }
+       .pass{
+        color: green;
+       }
+         .fail{
+          color: red;
+         }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Maks calculator</h1>
+        <input type="number" placeholder="Tamil marks" id="m1">
+        <input type="number" placeholder="English marks" id="m2">
+        <input type="number" placeholder="Maths marks" id="m3">
+        <input type="number" placeholder="Science marks" id="m4">
+        <input type="number" placeholder="Social marks" id="m5">
+        <button onclick="calculate()">Calculate</button>
+
+    <div class="result">
+        <p>Total: <span id="total">0</span></p>
+        <p>Average: <span id="average">0</span></p>
+        <p>Grade: <span id="grade">N/A</span></p>
+        <p>Status: <span id="status">N/A</span></p>
+    </div>
+    </div>
+    <script>
+        function calculate()
+        {
+            const  marks= [
+                Number(document.getElementById('m1').value),
+                Number(document.getElementById('m2').value),
+                Number(document.getElementById('m3').value),
+                Number(document.getElementById('m4').value),
+                Number(document.getElementById('m5').value)
+            ];
+
+            //validation
+            for( let m of marks)
+        {
+            if(m < 0 || m>100 )
+        {
+            alert("Please enter valid marks between 0 and 100");
+            return;
+        }
+        }
+                                        
+        const total=marks.reduce((sum, m)=> sum + m, 0);
+        const average= total/marks.length;
+        
+
+        let grade="";
+        let status="";
+        let statusClass="";
+
+        if(average >=90)
+        {
+            grade="A+";
+            status="Pass";
+            statusClass="pass";
+        }else if(average >= 75)
+        {
+            grade="A";
+            status="Pass";
+            statusClass="pass";
+        }
+        else if(average >= 60)
+        {
+            grade="B";
+            status="Pass";
+            statusClass="pass";
+        }
+        else if(average >= 40)
+        {
+            grade="C";
+            status="Pass";
+            statusClass="pass";
+        }
+        else
+        {
+            grade="-";
+            status="Fail";
+            statusClass="fail";
+        }
+
+        document.getElementById("total").textContent= total;
+        document.getElementById("average").textContent= average.toFixed(2);
+        document.getElementById("grade").textContent= grade;
+
+        const statusspan = document.getElementById("status");
+        statusspan.textContent= status;
+        statusspan.className= statusClass;
+    }   
+    </script>
+</body>
+</html>
