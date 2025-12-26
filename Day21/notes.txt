@@ -1,0 +1,95 @@
+Promise:
+           it holds the result of async operatiomn.
+           Need of promise: to overcome callbackhell scenario.
+           it is an object, which is holds result .
+
+
+    syntax:
+            var variablename = new promise((reolve, reject));
+
+    promise have 3 states:
+     1.pending
+     2.fulfilled(resolveall)
+     3.rejected
+
+Why we use Promises?
+✔ To avoid Callback Hell
+✔ To handle asynchronous tasks cleanly
+✔ For API calls, DB calls
+✔ Easy error handling
+✔ Better readability than nested callbacks
+=====================================================================================
+2.promiseall
+====================================================================================
+3.promise chaining
+                   Used for step-by-step work (instead of callback hell)
+                  Promise Chaining is a method where multiple asynchronous tasks run one after another, in a proper sequence.
+Each .then() waits for the previous Promise to finish (resolve) before starting the next one.
+
+✔ Ensures ordered execution
+✔ Removes callback hell
+✔ Makes async code clean and readable
+✔ Works step-by-step (sequential workflow)
+
+Syntax:
+         promise1()
+  .then(promise2)
+  .then(promise3)
+  .then(promise4)
+  .catch(errorHandler);
+Where We Use Promise Chaining?
+
+We use Promise chaining when tasks must run in a specific order, like:
+
+Login → then fetch user → then fetch posts
+
+Load data step-by-step
+
+Complex async workflows
+
+Database operations in order
+
+Animations one after another
+
+Backend processes that depend on previous steps
+
+API calls that must run sequentially
+=================================================================================
+4.then.catch
+  promise
+  .then(result => {
+      // success
+  })
+  .catch(error => {
+      // error
+  });
+=================================================================================
+5prototype:
+            Prototype is a hidden parent object that all JavaScript objects have.
+
+If an object does NOT have a property/method,
+JavaScript will automatically search in its prototype.
+
+👉 Prototype = Parent
+👉 Object = Child
+👉 Child uses parent’s properties through prototype
+===========================================================================
+6.What is Inheritance? (Very Simple Notes)
+
+Inheritance means one object can use another object's properties and methods.
+
+JavaScript uses prototype to do inheritance.
+
+Example:
+Student inherits Person.
+Car inherits Vehicle.
+==================================================================
+7.Strict Mode
+              Strict mode is a special mode in JavaScript that makes your code safer and cleaner.
+              JS becomes more strict and stops you from making mistakes.   
+
+                   Helps catch errors
+                 ✔ Stops bad coding practices
+                ✔ Makes debugging easy
+                ✔ Prevents silent failures
+                ✔ Improves performance 

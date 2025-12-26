@@ -1,0 +1,36 @@
+1.ES6 (ECMAScript 2015) is a modern version of JavaScript with new features that make coding easier, cleaner, and faster.
+
+Before ES6 → JS very old & limited.
+After ES6 → JS became modern language (React, Node, etc.)
+
+   ✔ Released in 2015
+✔ Big update with many features
+✔ Used in all modern JS frameworks (React, Node, Angular)
+------------------------------------------
+
+2️⃣ Why ES6 is Important?
+✔ Simpler syntax
+✔ Cleaner code
+✔ More readable
+✔ Faster development
+✔ Required for React, Node, Mongo, Express
+✔ Better performance
+=========================================================================
+ES6 Main Features
+1. let & const:  
+               Earlier only var (global weird behavior).
+     ES6 introduced:
+     let → block scope
+     const → constant values
+---------------------------------
+2.Arrow Functions:
+                   const add = (a, b) => a + b;
+-------------------------------
+3. Template Literals:
+      let name = "Eswari";
+console.log(`Hello ${name}, welcome!`);
+--------------------------------
+4.Default Parameters:
+            function greet(name = "Guest") {
+    console.log("Hello", name);
+}
