@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    margin:0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:radial-gradient(circle at top,#0b9fd5aa,#0c0143);
+}
+
+/*card*/
+.game{
+    width:400px;
+    padding: 35px;
+    border-radius: 25px;
+    background: rgba(169, 7, 136, 0.373);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,4);
+    text-align: center;
+    color: aliceblue;
+}
+
+h1{
+    margin-bottom:5px;
+    letter-spacing: 2px;
+}
+.subtitle{
+    font-size: 16px;
+    opacity: 0.9;
+
+}
+.dice-area
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+.dice
+{
+    width:100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+    padding: 14px;
+    box-shadow: insetinset 0 0 12px rgba(0,0,0,0.25),
+    0 18px 35px rgba(228, 13, 13, 0.948);
+}
+
+/* Dice dots */
+.dot{
+  width:15px;
+  height:15px;
+  background:#111;
+  border-radius:50%;
+  margin:auto;
+  visibility:hidden;
+}
+
+/* Roll animation */
+.roll{
+  animation:roll 0.6s ease-in-out;
+}
+
+@keyframes roll{
+  0%{transform:rotate(0) scale(1);}
+  30%{transform:rotate(150deg) scale(1.1);}
+  60%{transform:rotate(300deg) scale(1.15);}
+  100%{transform:rotate(360deg) scale(1);}
+}
+/*score*/
+.score-box{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.score{
+    flex: 1;
+    background: rgba(255,355,355,0.25);
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: 600;
+}
+button{
+    margin-top: 20px;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg,#00f2fe,#4facfe);
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+button:hover{
+    transform: translate(-33px);
+   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.result{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
